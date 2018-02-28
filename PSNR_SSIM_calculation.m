@@ -35,7 +35,6 @@ for image_number = 1:length(pre_images)
     
     [ssIndex(image_number),~]=ssim(pre_im,rec_im); % ssim index 
         
-   % fprintf('\n %15s: PSNR = %f dB, Time = %f  seconds\n, SSIM = %f', image_name, psnr(image_number), time_complexity(image_number),ssIndex(image_number)) 
     fprintf('\n %15s: PSNR = %f dB,  SSIM = %f \n ', image_name, psnr(image_number), ssIndex(image_number));    
 
 end
