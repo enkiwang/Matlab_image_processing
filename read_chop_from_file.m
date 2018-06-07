@@ -2,8 +2,8 @@ function [ imgs, labels ] = read_chop_from_file( file_directory, stride, block_s
 %READ_FROM_FILE Read all images from a given directory (in Win sytem).
 % file_directory: directory of the image file to read + chop from.
 % example: 
-%         root = 'C:\Users\Yongwei\Documents\research\experiments\data\Training_Data\Train';
-%         [ imgs, labels ] = read_from_file( root, 32 )
+%         root = ''C:\Users\Yongwei\Documents\data'';
+%         [ imgs, labels ] = read_from_file( root, 16, 32 )
 
 % Input: RGB images of different sizes
 % Output: Y component only (YCbCr)
@@ -11,15 +11,15 @@ function [ imgs, labels ] = read_chop_from_file( file_directory, stride, block_s
 % Date: Jun 6, 2018
 % @ Yongwei Wang
 
-file_directory = 'C:\Users\Yongwei\Documents\research\experiments\data\Training_Data\Train';
+%file_directory = ''C:\Users\Yongwei\Documents\data'';
 
 info = dir(fullfile(file_directory, '*.bmp')); % list all images in terms of fields for the given full path
 
 num_img = length(info);
 
 % cropping each image into blocks with stride
-stride = 16;
-block_size = 32;
+% stride = 16;
+% block_size = 32;
 tol = 1; % tol-- number of blocks, will vary and given 1 first 
 imgs = zeros(block_size, block_size, 1, tol);
 labels = zeros(1, tol); % assigning a 1-dim label to each block
