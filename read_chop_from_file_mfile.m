@@ -8,7 +8,7 @@
 close all;
 clear;clc
 
-root = 'C:\Users\Yongwei\Documents\research\experiments\data\Training_Data\Train';
+root = 'C:\Users\Yongwei\Documents\data';
 
 info = dir(fullfile(root, '*.bmp')); % list all images in terms of fields for the given full path
 
