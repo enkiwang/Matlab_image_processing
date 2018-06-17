@@ -1,5 +1,7 @@
-% load CIFAR-10 dataset (training + test), and convert to grayscale version
-% both RGB and grayscale images are in uint8 format
+% load CIFAR-10 dataset (training + test), and convert to grayscale
+% version.
+% both RGB and grayscale images are in uint8 format, then saved as double
+% and normalized format.
 % CIFAR-10 dataset(Matlab) can be downloaded from here-- https://www.cs.toronto.edu/~kriz/cifar.html
 
 % June 16, 2018
@@ -11,6 +13,7 @@ clear;clc
 % concatenating datasets into one matrix (50k for training + 10k for test)
 cifarRGB = uint8(zeros(60e3, 3072));  % uint8 conversion, otherwise data format mismatch
 cifarGray = uint8(zeros(60e3, 1024));
+cifar = zeros(60e3, 1024);
 
 %% loading cifar-10 RGB dataset
 % batch 1
@@ -54,11 +57,13 @@ for k = 1 : num_imgs
     img = permute(img, [2, 1, 3]);
     img = rgb2gray(img);
     cifarGray(k,:) = reshape(img, [1,1024]);
+    cifar(k,:) = reshape(im2double(img),[1,1024]);
     
 end
     
     
  save cifarGray.mat cifarGray   % uint8 format
+ save cifar.mat cifar           % double and normalized format
     
     
 
