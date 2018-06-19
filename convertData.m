@@ -1,7 +1,9 @@
 function convertData(data,label,chunksz,totalct,savepath )
 %convertData: Convert data into HDF5 data type, no return
-%   data: input to the CNN, [H, W, C, N]
-%   label: output of CNN, [H, W, C, N]
+%   data: input to the CNN, Caffe C-style [N, C, H, W], equivalent to [W, H, C,
+%   N] in Matlab-style. 
+%   label: output of CNN, Caffe C-style [N, C, H, W], equivalent to [W, H, C,
+%   N] in Matlab-style.
 % example: convertData(data,label,128,0,'data_name.h5' );
 
 created_flag = false;
