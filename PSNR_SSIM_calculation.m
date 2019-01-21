@@ -11,11 +11,11 @@ clc
 
 pre_images_dir = './pre';
 pre_images = dir(pre_images_dir);
-pre_images = pre_images(3:end-1); 
+pre_images = pre_images(2:end-1); % for Linux, 3:end
 
 gt_images_dir = './gt'; 
 gt_images=dir(gt_images_dir);
-gt_images=gt_images(3:end-1);
+gt_images=gt_images(2:end-1);
 
 psnr = zeros(length(pre_images),1);
 ssIndex=zeros(length(pre_images),1);
