@@ -11,7 +11,7 @@ clc
 
 pre_images_dir = './pre';
 pre_images = dir(pre_images_dir);
-pre_images = pre_images(3:end-1); #starting from 2 for Linux system.
+pre_images = pre_images(3:end-1); 
 
 gt_images_dir = './gt'; 
 gt_images=dir(gt_images_dir);
