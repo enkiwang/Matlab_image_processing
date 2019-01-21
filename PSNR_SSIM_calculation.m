@@ -1,6 +1,7 @@
 % Matlab code to calculate PSNR+SSIM indices of images within one directory
-% tested on Matlab R2013b
-% Date: Jan. 20, 2017
+% tested on Matlab R2013b, Windows
+% Date: Jan. 20, 2018
+% Modified: Jan.20, 2019
 % Author: yongweiw
 clear
 close all
@@ -10,7 +11,7 @@ clc
 
 pre_images_dir = './pre';
 pre_images = dir(pre_images_dir);
-pre_images = pre_images(3:end-1);
+pre_images = pre_images(3:end-1); #starting from 2 for Linux system.
 
 gt_images_dir = './gt'; 
 gt_images=dir(gt_images_dir);
